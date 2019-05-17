@@ -1,18 +1,20 @@
-const authors = [
-    { name: 'Patrick Rothfuss', age: 44, id: '1' },
-    { name: 'Brandon Sanderson', age: 42, id: '2' },
-    { name: 'Terry Pratchett', age: 66, id: '3' },
-];
+const Author = require('../models/author');
 
 function findAll () {
-    return authors;
+    return Author.find();
 }
 
 function findOne (id) {
-    return authors.find(x => x.id === id);
+    return Author.findById(id);
 };
+
+function create ({ name, age }) {
+    author = new Author({ name, age });
+    return author.save();
+}
 
 module.exports = {
     findAll,
     findOne,
+    create,
 };

@@ -1,24 +1,25 @@
-const books = [
-    { name: 'Name of the Wind', genre: 'Fantasy', id: '1', authorId: '1' },
-    { name: 'The Final Empire', genre: 'Fantasy', id: '2', authorId: '2' },
-    { name: 'The Long Earth', genre: 'Sci-Fi', id: '3', authorId: '3' },
-    { name: 'Kodu ja linn', genre: 'normal', id: '4', authorId: '2' },
-];
+const Book = require('../models/book');
 
 function findAll () {
-    return books;
+    return Book.find();
 }
 
 function findOne (id) {
-    return books.find(x => x.id === id);
+    return Book.findById(id);
 };
 
 function findByAuthorId (authorId) {
-    return books.filter(x => x.authorId === authorId);
+    return Book.find({ authorId });
+};
+
+function create ({ name, genre, authorId }) {
+    const book = new Book({ name, genre, authorId });
+    return book.save();
 };
 
 module.exports = {
     findAll,
     findOne,
     findByAuthorId,
+    create,
 };
