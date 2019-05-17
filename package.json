@@ -1,0 +1,29 @@
+{
+  "name": "graph-that-ql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atatter/graph-that-ql.git"
+  },
+  "author": "Aleks Tatter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atatter/graph-that-ql/issues"
+  },
+  "homepage": "https://github.com/atatter/graph-that-ql#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.3.0",
+    "mongoose": "^5.5.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
